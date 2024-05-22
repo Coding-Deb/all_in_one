@@ -67,12 +67,12 @@ export const TopBar = () => {
                 >
                   CodeSpace
                 </Link>
-                <Link to="#"
+                <Link to="/language_translator"
                   className="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium transition duration-300 ease-in-out"
                 >
                   Language Translator
                 </Link>
-                <Link to="#"
+                <Link to="/review_detect"
                   className="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium transition duration-300 ease-in-out"
                 >
                   Review Detection
