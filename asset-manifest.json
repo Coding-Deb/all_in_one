@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/static/css/main.3d6a29c0.css",
-    "main.js": "/static/js/main.73b41c21.js",
-    "static/js/453.33921800.chunk.js": "/static/js/453.33921800.chunk.js",
-    "static/media/3d-rendering-kid-playing-digital-game-removebg-preview.png": "/static/media/3d-rendering-kid-playing-digital-game-removebg-preview.b23e3b447e781cfaf6b3.png",
-    "static/media/3593965-removebg-preview.png": "/static/media/3593965-removebg-preview.32606771ce0e905bc82d.png",
-    "index.html": "/index.html",
-    "main.3d6a29c0.css.map": "/static/css/main.3d6a29c0.css.map",
-    "main.73b41c21.js.map": "/static/js/main.73b41c21.js.map",
-    "453.33921800.chunk.js.map": "/static/js/453.33921800.chunk.js.map"
+    "main.css": "/all_in_one/static/css/main.3d6a29c0.css",
+    "main.js": "/all_in_one/static/js/main.fc2caa78.js",
+    "static/js/453.33921800.chunk.js": "/all_in_one/static/js/453.33921800.chunk.js",
+    "static/media/3d-rendering-kid-playing-digital-game-removebg-preview.png": "/all_in_one/static/media/3d-rendering-kid-playing-digital-game-removebg-preview.b23e3b447e781cfaf6b3.png",
+    "static/media/3593965-removebg-preview.png": "/all_in_one/static/media/3593965-removebg-preview.32606771ce0e905bc82d.png",
+    "index.html": "/all_in_one/index.html",
+    "main.3d6a29c0.css.map": "/all_in_one/static/css/main.3d6a29c0.css.map",
+    "main.fc2caa78.js.map": "/all_in_one/static/js/main.fc2caa78.js.map",
+    "453.33921800.chunk.js.map": "/all_in_one/static/js/453.33921800.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.3d6a29c0.css",
-    "static/js/main.73b41c21.js"
+    "static/js/main.fc2caa78.js"
   ]
 }
