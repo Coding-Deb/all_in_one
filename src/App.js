@@ -6,14 +6,14 @@ import { MainPage } from './Pages/mainPage';
 
 function App() {
   return (
-    <Router>
+    
       <div className="App">
         <Routes>
           <Route path="/" element={<MainPage />} />
           <Route path="/codespace" element={<AboutPage />} />
         </Routes>
       </div>
-    </Router>
+    
   );
 }
 
