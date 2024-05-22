@@ -3,7 +3,7 @@ const skills = [
         id: 1,
         name: "HTML",
         level: 3
-
+        
     },
     {
         id: 2,

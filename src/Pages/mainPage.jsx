@@ -3,7 +3,8 @@ import skills from "../Apis/skill";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { TopBar } from "../Components/topbar";
 import { Footer } from "../Components/footer";
-
+import "../CSS/web.css";
+import { Link } from "react-router-dom";
 export const MainPage = () => {
   const [skill, setSkill] = useState(skills);
 
@@ -39,9 +40,11 @@ export const MainPage = () => {
               KNOW MORE
               <FontAwesomeIcon icon="fa-regular fa-arrow-up-right-from-square" />
             </button>
-            <button className="border-green-700 border-2 hover:bg-green-700 hover:text-white text-green-700 font-bold py-2 px-6 rounded focus:outline-none focus m-3 shadow-2xl shadow-black">
-              GITHUB
-            </button>
+            <Link to="https://github.com/Coding-Deb">
+              <button className="border-green-700 border-2 hover:bg-green-700 hover:text-white text-green-700 font-bold py-2 px-6 rounded focus:outline-none focus m-3 shadow-2xl shadow-black">
+                GITHUB
+              </button>
+            </Link>
           </div>
         </div>
         <div className="flex justify-center items-center w-full lg:w-1/2 animate-slide-in">
@@ -62,13 +65,25 @@ export const MainPage = () => {
           {skill.map((item, index) => (
             <div
               key={index}
-              className="flex flex-col items-center p-5 m-2 hover:shadow-2xl shadow-2xl shadow-black bg-[#282c34] hover:bg-yellow-800 hover:text-black duration-500 transform transition hover:scale-105 animate-slide-in"
+              className="flex flex-col items-center p-5 m-2 rounded-xl hover:shadow-2xl shadow-2xl shadow-black bg-[#282c34] hover:bg-yellow-800 hover:text-black duration-500 transform transition hover:scale-105 animate-slide-in"
             >
-              <img
+              {/* <img
                 src={require("../Images/3593965-removebg-preview.png")}
                 alt=""
                 className="h-20 w-20"
-              />
+              /> */}
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                className="home-icon"
+              >
+                <g data-name="Layer 2">
+                  <g data-name="home">
+                    <rect width="24" height="24" opacity="0" />
+                    <path d="M20.42 10.18L12.71 2.3a1 1 0 0 0-1.42 0l-7.71 7.89A2 2 0 0 0 3 11.62V20a2 2 0 0 0 1.89 2h14.22A2 2 0 0 0 21 20v-8.38a2.07 2.07 0 0 0-.58-1.44zM10 20v-6h4v6zm9 0h-3v-7a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v7H5v-8.42l7-7.15 7 7.19z" />
+                  </g>
+                </g>
+              </svg>
               <div className="flex flex-col justify-center items-center transition duration-150 ease-in-out hover:ease-in-out">
                 <p className="font-bold text-xl text-white">{item.name}</p>
                 <p className="text-md text-white">
