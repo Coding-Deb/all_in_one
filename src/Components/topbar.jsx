@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Transition } from "@headlessui/react";
+import { Link } from "react-router-dom";
 
 export const TopBar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -60,31 +61,23 @@ export const TopBar = () => {
             </div>
             <div className="hidden sm:ml-6 sm:block">
               <div className="flex space-x-4">
-                <a
-                  href="#"
+                <Link to="/codespace"
                   className="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium transition duration-300 ease-in-out"
                   aria-current="page"
                 >
-                  Dashboard
-                </a>
-                <a
-                  href="#"
+                  CodeSpace
+                </Link>
+                <Link to="#"
                   className="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium transition duration-300 ease-in-out"
                 >
-                  Team
-                </a>
-                <a
-                  href="#"
+                  Language Translator
+                </Link>
+                <Link to="#"
                   className="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium transition duration-300 ease-in-out"
                 >
-                  Projects
-                </a>
-                <a
-                  href="#"
-                  className="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium transition duration-300 ease-in-out"
-                >
-                  Calendar
-                </a>
+                  Review Detection
+                </Link>
+                
               </div>
             </div>
           </div>
@@ -143,31 +136,27 @@ export const TopBar = () => {
       >
         <div className="sm:hidden" id="mobile-menu">
           <div className="space-y-1 px-2 pb-3 pt-2">
-            <a
-              href="#"
+            <Link to="#"
               className="bg-gray-900 text-white block rounded-md px-3 py-2 text-base font-medium transition duration-300 ease-in-out"
               aria-current="page"
             >
               Dashboard
-            </a>
-            <a
-              href="#"
+            </Link>
+            <Link to="#"
               className="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium transition duration-300 ease-in-out"
             >
               Team
-            </a>
-            <a
-              href="#"
+            </Link>
+            <Link to="#"
               className="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium transition duration-300 ease-in-out"
             >
               Projects
-            </a>
-            <a
-              href="#"
+            </Link>
+            <Link to="#"
               className="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium transition duration-300 ease-in-out"
             >
               Calendar
-            </a>
+            </Link>
           </div>
         </div>
       </Transition>
