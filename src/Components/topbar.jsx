@@ -136,21 +136,21 @@ export const TopBar = () => {
       >
         <div className="sm:hidden" id="mobile-menu">
           <div className="space-y-1 px-2 pb-3 pt-2">
-            <Link to="#"
+            <Link to="/codespace"
               className="bg-gray-900 text-white block rounded-md px-3 py-2 text-base font-medium transition duration-300 ease-in-out"
               aria-current="page"
             >
-              Dashboard
+              CodeSpace
             </Link>
-            <Link to="#"
+            <Link to="/language_translator"
               className="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium transition duration-300 ease-in-out"
             >
-              Team
+              Language Translator
             </Link>
-            <Link to="#"
+            <Link to="/review_detect"
               className="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium transition duration-300 ease-in-out"
             >
-              Projects
+              Review Detection
             </Link>
             <Link to="#"
               className="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium transition duration-300 ease-in-out"
