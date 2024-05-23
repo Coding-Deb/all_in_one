@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/all_in_one/static/css/main.ea3da0c4.css",
-    "main.js": "/all_in_one/static/js/main.c1a10461.js",
+    "main.css": "/all_in_one/static/css/main.c354dd11.css",
+    "main.js": "/all_in_one/static/js/main.0d5500a8.js",
     "static/js/453.33921800.chunk.js": "/all_in_one/static/js/453.33921800.chunk.js",
     "static/media/3d-rendering-kid-playing-digital-game-removebg-preview.png": "/all_in_one/static/media/3d-rendering-kid-playing-digital-game-removebg-preview.b23e3b447e781cfaf6b3.png",
     "index.html": "/all_in_one/index.html",
-    "main.ea3da0c4.css.map": "/all_in_one/static/css/main.ea3da0c4.css.map",
-    "main.c1a10461.js.map": "/all_in_one/static/js/main.c1a10461.js.map",
+    "main.c354dd11.css.map": "/all_in_one/static/css/main.c354dd11.css.map",
+    "main.0d5500a8.js.map": "/all_in_one/static/js/main.0d5500a8.js.map",
     "453.33921800.chunk.js.map": "/all_in_one/static/js/453.33921800.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ea3da0c4.css",
-    "static/js/main.c1a10461.js"
+    "static/css/main.c354dd11.css",
+    "static/js/main.0d5500a8.js"
   ]
 }
