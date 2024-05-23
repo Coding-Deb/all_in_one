@@ -10,6 +10,9 @@ export const Language_Translate_Homepage = () => {
   const [sourceLang, setSourceLang] = useState('');
   const [targetLang, setTargetLang] = useState('');
 
+  const apiKey = process.env.REACT_APP_GOOGLE_TRANSLATE_API_KEY;
+
+
   const languages = [
     { code: "en", name: "English" },
     { code: "es", name: "Spanish" },
@@ -44,7 +47,7 @@ export const Language_Translate_Homepage = () => {
     setTranslated('Loading....');
     try {
       const response = await axios.post(
-        "https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=AIzaSyAJkGDXlM3x7VUdONnJhVC4ppUp3UoJBEo",
+        `https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=${apiKey}`,
         {
           contents: [
             {
