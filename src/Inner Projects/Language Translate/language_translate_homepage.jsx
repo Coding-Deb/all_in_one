@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { TopBar } from "../../Components/topbar";
 import "../../CSS/web.css";
+import axios from "axios";
 
 export const Language_Translate_Homepage = () => {
   const [rotated, setRotated] = useState(false);
@@ -13,12 +14,12 @@ export const Language_Translate_Homepage = () => {
     { code: "en", name: "English" },
     { code: "es", name: "Spanish" },
     { code: "fr", name: "French" },
+    { code: "bn", name: "Bengali" },
     // Add more languages as needed
   ];
 
   const handleClick = () => {
     setRotated(!rotated);
-    // Logic for switching languages
     const tempLang = sourceLang;
     setSourceLang(targetLang);
     setTargetLang(tempLang);
@@ -38,6 +39,30 @@ export const Language_Translate_Homepage = () => {
     setTranslated(`Translated text from ${sourceLang} to ${targetLang}: ${input}`);
   };
 
+  async function generate_text() {
+    console.log("loading....");
+    setTranslated('Loading....');
+    try {
+      const response = await axios.post(
+        "https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=AIzaSyAJkGDXlM3x7VUdONnJhVC4ppUp3UoJBEo",
+        {
+          contents: [
+            {
+              parts: [{ text: `Translate ${input} from ${sourceLang} to ${targetLang}` }]
+            },
+          ],
+        }
+      );
+      const data = response.data.candidates[0].content.parts[0].text;
+      console.log(data);
+      setTranslated(data);
+      // Process the response as needed
+    } catch (error) {
+      console.error("Error generating text:", error);
+      setTranslated("Error generating text");
+    }
+  }
+
   return (
     <div className="flex flex-col p-4 bg-gradient-to-r from-slate-800 to-slate-900 min-h-screen">
       <TopBar />
@@ -45,7 +70,7 @@ export const Language_Translate_Homepage = () => {
         <h1 className="font-sans">Translate Any Language Instantly</h1>
       </div>
       <div className="border-2 border-gray-700 shadow-lg shadow-black p-6 m-4 bg-slate-800 rounded-lg flex flex-col space-y-4">
-        <div className="border-2 border-black m-3 p-3 flex flex-col space-y-4">
+        <div className="m-3 p-3 flex flex-col space-y-4">
           <div className="flex flex-col md:flex-row justify-between">
             <select
               value={sourceLang}
@@ -60,7 +85,7 @@ export const Language_Translate_Homepage = () => {
               ))}
             </select>
             <div className="p-3 m-3 flex items-center justify-center">
-              <div className="border-2 border-black px-4 py-2 m-3 rounded-2xl bg-white w-fit flex justify-center items-center">
+              <div className="border-2 border-black px-4 py-2 m-3 rounded-2xl bg-white w-fit flex justify-center items-center cursor-pointer">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   version="1.1"
@@ -129,14 +154,17 @@ export const Language_Translate_Homepage = () => {
         </div>
         <div className="p-3 m-3 flex justify-center space-x-4">
           <button
-            onClick={translate}
-            className="border-2 border-black px-4 py-2 rounded-2xl bg-white text-black font-bold text-2xl shadow-lg shadow-black transition-transform duration-300 hover:scale-105"
+            onClick={() => {
+              translate();
+              generate_text();
+            }}
+            className="border-2 border-black px-4 py-2 rounded-2xl hover:bg-orange-600 hover:text-white font-sans bg-white text-black font-bold text-2xl shadow-lg shadow-black transition-transform duration-300 hover:scale-105"
           >
             Translate
           </button>
           <button
             onClick={refresh}
-            className="border-2 border-black px-4 py-2 rounded-2xl bg-white text-black font-bold text-2xl shadow-lg shadow-black transition-transform duration-300 hover:scale-105"
+            className="border-2 border-black px-4 py-2 rounded-2xl hover:bg-green-600 hover:text-white font-sans bg-white text-black font-bold text-2xl shadow-lg shadow-black transition-transform duration-300 hover:scale-105"
           >
             Refresh
           </button>
