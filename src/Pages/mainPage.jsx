@@ -5,6 +5,7 @@ import { TopBar } from "../Components/topbar";
 import { Footer } from "../Components/footer";
 import "../CSS/web.css";
 import { Link } from "react-router-dom";
+
 export const MainPage = () => {
   const [skill, setSkill] = useState(skills);
 
@@ -15,19 +16,19 @@ export const MainPage = () => {
   return (
     <div className="flex flex-col p-4 bg-slate-900">
       <TopBar />
-      <div className="flex flex-col lg:flex-row p-5">
+      <div className="flex flex-col lg:flex-row p-5 text-center sm:text-left">
         <div className="flex p-5 m-4 flex-col w-full lg:w-1/2 animate-slide-in">
-          <p className="font-bold text-3xl text-white">
+          <p className="font-bold text-2xl sm:text-3xl text-white">
             Hello, I am{" "}
-            <span className="text-green-800 font-bold text-5xl">
+            <span className="text-green-800 font-bold text-4xl sm:text-5xl">
               Debanshu Brahma
             </span>
             <br />{" "}
-            <span className="text-orange-600 font-bold text-2xl">
+            <span className="text-orange-600 font-bold text-xl sm:text-2xl">
               Full Stack (App, Web, Others)
             </span>
           </p>
-          <p className="font-bold text-xl text-gray-100 my-4">
+          <p className="font-bold text-lg sm:text-xl text-gray-100 my-4">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia
             asperiores magnam consectetur veniam autem, optio repudiandae nulla,
             debitis inventore repellendus tempora facere possimus consequatur
@@ -57,7 +58,7 @@ export const MainPage = () => {
       </div>
       <div className="flex flex-col p-5 my-3 animate-slide-in">
         <div className="flex flex-initial p-4 mb-4">
-          <h1 className="font-bold text-3xl text-orange-500 shadow-2xl rounded-lg">
+          <h1 className="font-bold text-2xl sm:text-3xl text-orange-500 shadow-2xl rounded-lg">
             My Skills
           </h1>
         </div>
@@ -65,28 +66,23 @@ export const MainPage = () => {
           {skill.map((item, index) => (
             <div
               key={index}
-              className="flex flex-col items-center p-5 m-2 rounded-xl hover:shadow-2xl shadow-2xl shadow-black bg-[#282c34] hover:bg-yellow-800 hover:text-black duration-500 transform transition hover:scale-105 animate-slide-in"
+              className="group flex flex-col items-center p-5 m-2 rounded-xl hover:shadow-2xl shadow-2xl shadow-black bg-[#282c34] hover:bg-yellow-800 hover:text-black duration-500 transform transition hover:scale-105 cursor-pointer"
             >
-              {/* <img
-                src={require("../Images/3593965-removebg-preview.png")}
-                alt=""
-                className="h-20 w-20"
-              /> */}
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                className="home-icon"
+                height="25px"
+                viewBox="0 -960 960 960"
+                width="25px"
+                fill="#e8eaed"
+                className="transition-transform duration-300 ease-in-out transform group-hover:w-10 group-hover:h-10"
               >
-                <g data-name="Layer 2">
-                  <g data-name="home">
-                    <rect width="24" height="24" opacity="0" />
-                    <path d="M20.42 10.18L12.71 2.3a1 1 0 0 0-1.42 0l-7.71 7.89A2 2 0 0 0 3 11.62V20a2 2 0 0 0 1.89 2h14.22A2 2 0 0 0 21 20v-8.38a2.07 2.07 0 0 0-.58-1.44zM10 20v-6h4v6zm9 0h-3v-7a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v7H5v-8.42l7-7.15 7 7.19z" />
-                  </g>
-                </g>
+                <path d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z" />
               </svg>
-              <div className="flex flex-col justify-center items-center transition duration-150 ease-in-out hover:ease-in-out">
-                <p className="font-bold text-xl text-white">{item.name}</p>
-                <p className="text-md text-white">
+              <div className="flex flex-col justify-center items-center transition duration-150 ease-in-out group-hover:ease-in-out">
+                <p className="font-bold text-lg sm:text-xl text-white group-hover:text-white">
+                  {item.name}
+                </p>
+                <p className="text-md text-white group-hover:text-white">
                   Lvl: <br />
                   {item.level}
                 </p>
