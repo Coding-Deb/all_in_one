@@ -16,7 +16,7 @@ export const TopBar = () => {
   const renderLinks = () => (
     <>
       <Link to="/" className={getLinkClasses("/")}>Dashboard</Link>
-      <Link to="/codespace" className={getLinkClasses("/codespace")}>CodeSpace</Link>
+      
       <Link to="/language_translator" className={getLinkClasses("/language_translator")}>Language Translator</Link>
       <Link to="/review_detect" className={getLinkClasses("/review_detect")}>Review Detection</Link>
     </>
