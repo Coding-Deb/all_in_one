@@ -13,7 +13,8 @@ export const Language_Translate_Homepage = () => {
   const apiKey = process.env.REACT_APP_GOOGLE_TRANSLATE_API_KEY;
 
 
-  const languages = [
+  const languages =
+  [
     { code: "en", name: "English" },
     { code: "es", name: "Spanish" },
     { code: "fr", name: "French" },
