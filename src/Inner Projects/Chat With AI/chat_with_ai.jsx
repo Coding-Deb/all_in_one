@@ -1,7 +1,45 @@
-import React from "react";
+import React, { useState } from "react";
 import { TopBar } from "../../Components/topbar";
+import axios from "axios";
 
 export const Chat_With_Ai = () => {
+  const apiKey = process.env.REACT_APP_GOOGLE_TRANSLATE_API_KEY;
+  const [input, setInput] = useState('');
+  const [chatHistory, setChatHistory] = useState([]);
+
+  const inputText = (event) => {
+    setInput(event.target.value);
+  };
+
+  async function generate_text() {
+    console.log("loading....");
+    try {
+      const userMessage = { sender: 'user', text: input };
+      setChatHistory([...chatHistory, userMessage]);
+
+      const response = await axios.post(
+        `https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=${apiKey}`,
+        {
+          contents: [
+            {
+              parts: [{ text: input }]
+            },
+          ],
+        }
+      );
+      const data = response.data.candidates[0].content.parts[0].text;
+      console.log(data);
+      const aiMessage = { sender: 'ai', text: data };
+      setChatHistory([...chatHistory, userMessage, aiMessage]);
+      setInput('');
+    } catch (error) {
+      console.error("Error generating text:", error);
+      const errorMessage = { sender: 'ai', text: 'Error generating text.' };
+      setChatHistory([...chatHistory, { sender: 'user', text: input }, errorMessage]);
+      setInput('');
+    }
+  }
+
   return (
     <div className="flex flex-col p-4 bg-gradient-to-r from-slate-800 to-slate-900 min-h-screen">
       <TopBar />
@@ -34,17 +72,40 @@ export const Chat_With_Ai = () => {
             {/* Add your history items here */}
           </div>
         </div>
-        <div className="w-full md:w-3/4 flex flex-col p-4 space-y-4">
-          <div className="flex-grow bg-slate-700 p-4 rounded">
-            {/* Chat content will go here */}
+        <div className="w-full md:w-3/4 flex flex-col p-5 space-y-4 border-2 border-black">
+          <div className="flex-grow bg-slate-700 p-4 rounded border-2 border-black overflow-y-auto">
+            {chatHistory.map((message, index) => (
+              <div
+                key={index}
+                className={`flex ${
+                  message.sender === 'user' ? 'justify-end' : 'justify-start'
+                } mb-2`}
+              >
+                <div
+                  className={`p-2 rounded-lg ${
+                    message.sender === 'user'
+                      ? 'bg-green-500 text-white shadow-lg shadow-black my-5'
+                      : 'bg-gray-300 text-black shadow-lg shadow-black my-5'
+                  }`}
+                  style={{ maxWidth: '70%' }}
+                >
+                  {message.text}
+                </div>
+              </div>
+            ))}
           </div>
-          <div className="flex flex-col sm:flex-row">
+          <div className="flex flex-col sm:flex-row fixed bottom-0 left-0 w-full p-4 bg-slate-900 border-t border-slate-700">
             <input
               type="text"
-              className="flex-grow p-3 rounded-l bg-slate-600 text-white mb-2 sm:mb-0 sm:rounded-r-none"
+              className="flex-grow p-3 rounded-xl bg-slate-600 text-white mb-2 sm:mb-0 sm:rounded-r-none"
               placeholder="Type your message..."
+              value={input}
+              onChange={inputText}
             />
-            <button className="p-2 bg-blue-600 text-white rounded-lg sm:rounded-none sm:rounded-r-lg sm:ml-2">
+            <button 
+              className="p-2 bg-green-800 text-white rounded-lg sm:rounded-none sm:rounded-r-lg sm:ml-2"
+              onClick={generate_text}
+            >
               Generate
             </button>
           </div>
