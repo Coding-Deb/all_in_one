@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/all_in_one/static/css/main.0b43f1b3.css",
-    "main.js": "/all_in_one/static/js/main.da271cad.js",
+    "main.css": "/all_in_one/static/css/main.03de5319.css",
+    "main.js": "/all_in_one/static/js/main.a8347e94.js",
     "static/js/453.33921800.chunk.js": "/all_in_one/static/js/453.33921800.chunk.js",
     "static/media/3d-rendering-kid-playing-digital-game-removebg-preview.png": "/all_in_one/static/media/3d-rendering-kid-playing-digital-game-removebg-preview.b23e3b447e781cfaf6b3.png",
     "index.html": "/all_in_one/index.html",
-    "main.0b43f1b3.css.map": "/all_in_one/static/css/main.0b43f1b3.css.map",
-    "main.da271cad.js.map": "/all_in_one/static/js/main.da271cad.js.map",
+    "main.03de5319.css.map": "/all_in_one/static/css/main.03de5319.css.map",
+    "main.a8347e94.js.map": "/all_in_one/static/js/main.a8347e94.js.map",
     "453.33921800.chunk.js.map": "/all_in_one/static/js/453.33921800.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.0b43f1b3.css",
-    "static/js/main.da271cad.js"
+    "static/css/main.03de5319.css",
+    "static/js/main.a8347e94.js"
   ]
 }
