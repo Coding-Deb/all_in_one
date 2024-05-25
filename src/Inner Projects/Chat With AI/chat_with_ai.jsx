@@ -10,7 +10,7 @@ export const Chat_With_Ai = () => {
   const inputText = (event) => {
     setInput(event.target.value);
   };
-
+ 
   async function generate_text() {
     console.log("loading....");
     try {
